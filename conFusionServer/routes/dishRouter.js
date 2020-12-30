@@ -7,9 +7,8 @@ const dishRouter = exress.Router();
 
 dishRouter.use(bodyParser.json());
 
-dishRouter
-  .route("/")
-  .get((req, res) => {
+dishRouter.route("/")
+  .get((req, res, next) => {
     Dishes.find({})
       .then(
         (dishes) => {
